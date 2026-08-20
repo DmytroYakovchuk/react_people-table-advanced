@@ -37,8 +37,8 @@ export const PeoplePage = () => {
       const matchesQuery =
         !query ||
         person.name.toLowerCase().includes(query) ||
-        person.motherName.toLowerCase().includes(query) ||
-        person.fatherName.toLowerCase().includes(query);
+        (person.motherName || '').toLowerCase().includes(query) ||
+        (person.fatherName || '').toLowerCase().includes(query);
 
       const matchesSex = !sex || person.sex === sex;
 
@@ -90,9 +90,11 @@ export const PeoplePage = () => {
     <>
       <h1 className="title">People Page</h1>
       <div className="columns">
-        <div className="column is-3">
-          <PeopleFilters />
-        </div>
+        {people.length > 0 && !isLoading && !hasError && (
+          <div className="column is-3">
+            <PeopleFilters />
+          </div>
+)}
         <div className="column">
           {people.length === 0 ? (
             <p data-cy="noPeopleMessage">There are no people on the server</p>

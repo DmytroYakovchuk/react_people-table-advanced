@@ -169,9 +169,7 @@ export const PeopleTable = ({ people, allPeople }: Props) => {
 
               <td>
                 {father ? (
-                  <a href={getPersonLink(father.slug)}>
-                    {father.name}
-                  </a>
+                  <a href={getPersonLink(father.slug)}>{father.name}</a>
                 ) : (
                   person.fatherName || '-'
                 )}
