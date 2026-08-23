@@ -94,7 +94,7 @@ export const PeoplePage = () => {
           <div className="column is-3">
             <PeopleFilters />
           </div>
-)}
+        )}
         <div className="column">
           {people.length === 0 ? (
             <p data-cy="noPeopleMessage">There are no people on the server</p>
