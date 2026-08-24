@@ -21,12 +21,15 @@ export const Navbar = () => {
             Home
           </NavLink>
 
-          <SearchLink
+          <NavLink
+            to="/people"
             params={{}}
-            className={({ isActive }) => `navbar-item ${isActive ? 'has-background-grey-lighter' : ''}`}
+            className={({ isActive }) =>
+              `navbar-item ${isActive ? 'has-background-grey-lighter' : ''}`
+            }
           >
             People
-          </SearchLink>
+          </NavLink>
         </div>
       </div>
     </nav>
