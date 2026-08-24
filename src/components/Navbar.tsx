@@ -22,7 +22,6 @@ export const Navbar = () => {
           </NavLink>
 
           <SearchLink
-            to="/people"
             params={{}}
             className={({ isActive }) => `navbar-item ${isActive ? 'has-background-grey-lighter' : ''}`}
           >
